@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>خۆشتدەوێم؟ ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ec;--bg2:#ff9bb5;--bg3:#e0245e;--ink:#5a0a26;--card:rgba(255,255,255,.55);--btn:#e0245e;--btn2:#fff;--btnink:#fff;--shadow:rgba(150,10,60,.28);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#4a1030;--bg2:#8a1a4a;--bg3:#2a0618;--ink:#ffe3ec;--card:rgba(40,8,24,.55);--btn:#ff4d82;--btn2:#3a1026;--btnink:#fff;--shadow:rgba(0,0,0,.5)}}
+:root[data-theme="dark"]{--bg1:#4a1030;--bg2:#8a1a4a;--bg3:#2a0618;--ink:#ffe3ec;--card:rgba(40,8,24,.55);--btn:#ff4d82;--btn2:#3a1026;--btnink:#fff;--shadow:rgba(0,0,0,.5)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{font-family:'Noto Sans Arabic','Segoe UI',Tahoma,system-ui,sans-serif;font-weight:600;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2) 55%,var(--bg3));background-size:200% 200%;animation:bg 14s ease-in-out infinite;overflow:hidden;position:relative}
+@keyframes bg{50%{background-position:100% 100%}}
+h1,h2{font-weight:800;margin:0;line-height:1.5}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.fh{position:absolute;bottom:-60px;animation:rise linear forwards;opacity:.0}
+@keyframes rise{10%{opacity:.8}100%{transform:translate(var(--dx),-115vh) rotate(var(--r));opacity:0}}
+.page{position:fixed;inset:0;padding:calc(16px + env(safe-area-inset-top,0px)) 18px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;z-index:1;opacity:0;visibility:hidden;transform:scale(.92) translateY(20px);transition:opacity .6s,transform .6s,visibility .6s;overflow-y:auto}
+.page.on{opacity:1;visibility:visible;transform:none}
+.card{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.5);border-radius:28px;padding:26px 22px;width:min(92vw,520px);box-shadow:0 20px 50px var(--shadow)}
+.big{font-size:clamp(2rem,8vw,3.6rem);text-shadow:0 4px 18px rgba(255,255,255,.4)}
+.btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;align-items:center;min-height:70px}
+button{font:inherit;font-weight:800;font-size:1.1rem;border:0;border-radius:999px;padding:14px 28px;cursor:pointer;color:var(--btnink);background:var(--btn);box-shadow:0 8px 22px var(--shadow);transition:transform .2s,box-shadow .2s;touch-action:manipulation}
+button:hover{transform:translateY(-3px) scale(1.05)}
+button:active{transform:scale(.96)}
+button.alt{background:var(--btn2);color:var(--ink)}
+#yes{font-size:1.4rem;padding:16px 38px;animation:pulse 1.4s infinite;transition:transform .4s}
+@keyframes pulse{50%{box-shadow:0 0 0 14px rgba(224,36,94,.18),0 8px 22px var(--shadow)}}
+#no{transition:left .3s cubic-bezier(.3,1.6,.5,1),top .3s cubic-bezier(.3,1.6,.5,1),transform .2s;z-index:50;white-space:nowrap}
+#nowrap{display:inline-block;min-width:110px;min-height:54px}
+.bear{width:min(46vw,190px);filter:drop-shadow(0 12px 14px var(--shadow));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}
+.blink{animation:blink 4s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.beat{animation:beat 1s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes beat{50%{transform:scale(1.2)}}
+#taunt{min-height:1.5em;font-weight:800}
+.prog{width:100%;height:12px;border-radius:99px;background:rgba(255,255,255,.5);overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff7aa2,var(--btn));border-radius:99px;transition:width .6s}
+.q{font-size:clamp(1.3rem,5vw,1.8rem);font-weight:800;margin:14px 0 20px;animation:pop .5s}
+@keyframes pop{from{opacity:0;transform:scale(.8) translateY(10px)}}
+.ans{display:flex;flex-direction:column;gap:12px}
+.ans button{width:100%}
+.shake{animation:shake .5s}
+@keyframes shake{25%{transform:translateX(-10px) rotate(-1deg)}75%{transform:translateX(10px) rotate(1deg)}}
+#toast{position:fixed;left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%,-30px) scale(.9);background:#fff;color:#5a0a26;padding:12px 20px;border-radius:18px;box-shadow:0 14px 34px var(--shadow);font-weight:800;opacity:0;pointer-events:none;transition:.35s;z-index:100;max-width:88vw;text-align:center}
+#toast.on{opacity:1;transform:translate(-50%,0) scale(1)}
+#mute{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:14px;z-index:100;width:48px;height:48px;padding:0;font-size:1.3rem;background:var(--card);color:var(--ink);border:1px solid rgba(255,255,255,.5)}
+.line{font-size:clamp(1.1rem,4.5vw,1.5rem);font-weight:800;min-height:2em;animation:pop .5s}
+.contract{font-size:1.05rem;line-height:1.6}
+.contract b{display:block;margin:10px 0}
+.burst{position:fixed;pointer-events:none;z-index:90;font-size:1.6rem;animation:fly 1.6s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1.4);opacity:0}}
+.small{opacity:.8;font-size:.95rem}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}}
+.credit{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.5);box-shadow:0 6px 18px var(--shadow);color:var(--ink);text-decoration:none;font-size:.85rem;font-weight:800;white-space:nowrap}
+.credit svg{width:22px;height:22px;flex:none}
+.credit b{direction:ltr;unicode-bidi:isolate}
+.page{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))!important}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+<button id="mute" aria-label="Mute or unmute music" title="Music">🔊</button>
+<div id="toast" role="status"></div>
+<a class="credit" href="https://www.snapchat.com/add/a7a-392" target="_blank" rel="noopener" aria-label="Snapchat a7a-392">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FFFC00"/><path d="M12 4c-2.6 0-4.2 1.9-4.2 4.3v1.9c-.5.2-1.1.3-1.8.3.3.5.8.9 1.7 1.1-.6 1.3-1.6 1.9-2.7 2.1.7.5 1.5.6 2.3.6.3.5.6.9 1.2 1 .9.1 1.4-.4 2-.4s1.1.5 2 .4c.6-.1.9-.5 1.2-1 .8 0 1.6-.1 2.3-.6-1.1-.2-2.1-.8-2.7-2.1.9-.2 1.4-.6 1.7-1.1-.7 0-1.3-.1-1.8-.3V8.300C16.200 5.900 14.600 4 12 4z" fill="#fff" stroke="#111" stroke-width="1.1" stroke-linejoin="round"/></svg>
+  <span>دروستکراوە لەلایەن <b>a7a-392</b></span>
+</a>
+
+<!-- PAGE 1 -->
+<section class="page on" id="p1">
+  <svg class="bear" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="45" cy="45" r="26" fill="#c98557"/><circle cx="45" cy="45" r="14" fill="#f6c3a1"/>
+    <circle cx="155" cy="45" r="26" fill="#c98557"/><circle cx="155" cy="45" r="14" fill="#f6c3a1"/>
+    <ellipse cx="100" cy="150" rx="55" ry="46" fill="#c98557"/>
+    <circle cx="100" cy="90" r="58" fill="#d9966a"/>
+    <ellipse cx="100" cy="108" rx="26" ry="20" fill="#f6c3a1"/>
+    <g class="blink"><circle cx="78" cy="82" r="7" fill="#3a1a10"/><circle cx="122" cy="82" r="7" fill="#3a1a10"/>
+    <circle cx="80" cy="79" r="2.5" fill="#fff"/><circle cx="124" cy="79" r="2.5" fill="#fff"/></g>
+    <ellipse cx="100" cy="99" rx="8" ry="6" fill="#3a1a10"/>
+    <path d="M90 112q10 9 20 0" stroke="#3a1a10" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="66" cy="102" r="8" fill="#ff8fab" opacity=".6"/><circle cx="134" cy="102" r="8" fill="#ff8fab" opacity=".6"/>
+    <path class="beat" d="M100 178c-30-20-38-38-26-50 10-9 22-3 26 5 4-8 16-14 26-5 12 12 4 30-26 50z" fill="#e0245e"/>
+  </svg>
+  <h1 class="big">خۆشتدەوێم؟ 🥺❤️</h1>
+  <div class="btns">
+    <button id="yes">بەڵێ ❤️</button>
+    <span id="nowrap"><button id="no" class="alt">نەخێر 💔</button></span>
+  </div>
+  <div id="taunt" class="small"></div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="p2">
+  <h2 class="big" style="font-size:clamp(1.7rem,6.5vw,2.8rem)">وەستە… بەڕاستی خۆشتدەوێم؟ 🤨❤️</h2>
+  <div class="card" id="qcard">
+    <div class="small" id="qcount"></div>
+    <div class="prog" style="margin-top:8px"><i id="bar"></i></div>
+    <div class="q" id="qtext"></div>
+    <div class="ans" id="ans"></div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="p3">
+  <div class="card" id="loadcard">
+    <div class="big" style="font-size:3rem">🔍❤️</div>
+    <div class="line" id="loadline"></div>
+    <div class="prog" style="margin-top:10px"><i id="lbar"></i></div>
+    <div class="small" id="pct" style="margin-top:8px">0%</div>
+  </div>
+  <div class="card contract" id="contract" style="display:none">
+    <h2 class="big" style="font-size:clamp(1.8rem,7vw,2.8rem)">پیرۆزە! 🎉❤️</h2>
+    <p>تۆ بە فەرمی ئیمزای <b>گرێبەستێکی هەتاهەتایی</b> کرد بۆ ئەوەی خۆشتبوێم!</p>
+    <p>بێ گەڕانەوەی پارە. بێ هەڵوەشاندنەوە. بێ ڕاکردن. 😈❤️</p>
+    <button id="accept" style="margin-top:8px;font-size:1.3rem">قبوڵمە ❤️</button>
+    <button id="decline" class="alt" style="margin-top:8px">ڕەتیدەکەمەوە 🙅</button>
+    <div class="small" id="final" style="margin-top:14px;font-weight:800"></div>
+  </div>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+const rnd=(a,b)=>a+Math.random()*(b-a);
+const show=id=>{document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===id))};
+
+/* floating hearts */
+const hearts=['❤️','💖','💗','💕','💘','🌸'];
+function floatHeart(){
+  const h=document.createElement('span');h.className='fh';
+  h.textContent=hearts[Math.floor(Math.random()*hearts.length)];
+  h.style.left=rnd(0,100)+'vw';h.style.fontSize=rnd(16,40)+'px';
+  h.style.setProperty('--dx',rnd(-80,80)+'px');h.style.setProperty('--r',rnd(-40,40)+'deg');
+  h.style.animationDuration=rnd(7,13)+'s';
+  $('hearts').appendChild(h);setTimeout(()=>h.remove(),13500);
+}
+setInterval(floatHeart,650);for(let i=0;i<8;i++)setTimeout(floatHeart,i*150);
+
+/* toast */
+let tt;function toast(m,ms=2200){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),ms)}
+
+/* burst */
+function burst(x,y,n=24){for(let i=0;i<n;i++){const s=document.createElement('span');s.className='burst';s.textContent=hearts[i%hearts.length];
+  s.style.left=x+'px';s.style.top=y+'px';const a=rnd(0,6.28),d=rnd(80,260);
+  s.style.setProperty('--x',Math.cos(a)*d+'px');s.style.setProperty('--y',Math.sin(a)*d+'px');s.style.setProperty('--r',rnd(-90,90)+'deg');
+  document.body.appendChild(s);setTimeout(()=>s.remove(),1700)}}
+
+/* music: soft synthesized lullaby */
+let ac,master,started=false,muted=false,step=0;
+const prog=[[261.6,329.6,392],[220,261.6,329.6],[174.6,220,261.6],[196,246.9,293.7]];
+function note(f,t,d,v){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=f;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+  o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05)}
+function tick(){
+  const c=prog[Math.floor(step/8)%4],i=step%8,seq=[0,1,2,1,2,1,2,1];
+  note(c[seq[i]]*2,ac.currentTime+.05,.7,.11);
+  if(i===0){note(c[0]/2,ac.currentTime+.05,2.2,.14)}
+  step++;setTimeout(tick,420);
+}
+function startMusic(){if(started)return;started=true;
+  try{ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;master.connect(ac.destination);tick()}catch(e){}}
+['pointerdown','keydown'].forEach(e=>document.addEventListener(e,()=>{startMusic();if(ac&&ac.state==='suspended')ac.resume()},{passive:true}));
+$('mute').onclick=()=>{muted=!muted;$('mute').textContent=muted?'🔇':'🔊';if(master)master.gain.value=muted?0:.5};
+
+/* NO button dodge */
+const no=$('no'),yes=$('yes');let moved=false,dodges=0;
+const labels=['نەخێر 💔','زۆر هێواشی! 😜','نا نا 😏','ڕامنەگرت! 🙈','دووبارە هەوڵبدە 😈','ناتوانی بمگریت 🏃','ئووپس 🫣','هەوڵێکی باش 😘','هەهە 🤭'];
+const taunts=['دوگمەکە شەرم دەکات…','ئافەرین هەوڵت دا! 🥹','لە ڕاستییەوە ڕادەکات 😏','بەس بەڵێ دابگرە، ئاسانترە 💕','دوگمەی نەخێر چاتەکەی جێهێشت 🚪','باشە، لە تۆ خێراترە 🏎️','بۆ هێشتا لێرەین؟ 😂'];
+function dodge(px,py){
+  const w=no.offsetWidth,h=no.offsetHeight,m=12;
+  if(!moved){const r=no.getBoundingClientRect();no.style.position='fixed';no.style.left=r.left+'px';no.style.top=r.top+'px';document.body.appendChild(no);moved=true;void no.offsetWidth}
+  const W=innerWidth,H=innerHeight;let x,y,t=0;
+  do{x=rnd(m,W-w-m);y=rnd(m+60,H-h-m);t++}
+  while(t<30&&px!=null&&Math.hypot(x+w/2-px,y+h/2-py)<180);
+  no.style.left=x+'px';no.style.top=y+'px';
+  no.style.transform='rotate('+rnd(-14,14)+'deg)';
+  dodges++;no.textContent=labels[dodges%labels.length];if(dodges%3===0)decoy();
+  if(dodges%2===0)$('taunt').textContent=taunts[Math.floor(Math.random()*taunts.length)];
+  if(dodges===8||dodges===16)toast('دوگمەی نەخێر خێراتر دەبێت 😳');
+  yes.style.transform='scale('+Math.min(1+dodges*.025,1.35)+')';
+}
+document.addEventListener('pointermove',e=>{
+  if(!$('p1').classList.contains('on'))return;
+  const r=no.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  if(Math.hypot(e.clientX-cx,e.clientY-cy)<Math.max(r.width,r.height)/2+70)dodge(e.clientX,e.clientY);
+});
+['pointerdown','touchstart','mousedown'].forEach(ev=>no.addEventListener(ev,e=>{e.preventDefault();dodge(e.clientX,e.clientY)},{passive:false}));
+no.addEventListener('click',e=>{e.preventDefault();dodge(e.clientX,e.clientY)});
+no.addEventListener('focus',()=>dodge());
+addEventListener('resize',()=>{if(moved)dodge()});
+
+/* YES → page 2 */
+yes.onclick=e=>{const r=yes.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,30);
+  toast('دەمزانی! 🥰 …بەڵام با دڵنیابین.');no.style.display='none';document.querySelectorAll('.decoy').forEach(x=>x.remove());
+  setTimeout(()=>{show('p2');loadQ()},900)};
+
+/* questions */
+const Q=[
+ {q:'ئایا ١٠٠٪ دڵنیایت؟',a:[['بەڵێ، بێگومان ❤️',1,'ئەوە دەڵێن متمانە! 😎'],['هممم… ڕەنگە؟',0,'ڕەنگە؟! وەک بەڵێ هەژمارم کرد 😤'],['١٠٠٠٪ و زیاتریش! 🔥',1,'ئاگرم گرت! 🔥'],['نازانم، لە دایکم بپرسە 👩',0,'']]},
+ {q:'ئەگەر ببم بە پەتاتە، هەر خۆشتدەوێم؟ 🥔',a:[['بێگومان!',1,'عاشقی پەتاتەی؟ جوانە 🥔❤️'],['نەخێر بە هیچ شێوەیەک 😂',0,'سەرپێچی! هەر لێم ناچیتە دەرەوە 🥔']]},
+ {q:'لە مۆبایلەکەت زیاتر خۆشتدەوێم؟ 📱',a:[['بەڵێ ❤️',1,'ئەی مۆبایلەکەت فڕێ بدە ئەمجا 👀 (گاڵتەم کرد)'],['با بیربکەمەوە…',0,'زۆر درەنگ بیرت کردەوە. وەڵامی هەڵە 📱💔'],['مۆبایل کێیە؟ 🤷',1,'ئاخ، وەڵامی ئەفسانەیی 🏆'],['مۆبایلەکەم هەمیشە لەگەڵمە، تۆ نا 😌',0,'']]},
+ {q:'دوایین پارچە پیتزاکەت لەگەڵ من دابەش دەکەیت؟ 🍕',a:[['بێ دوودڵی!',1,'مێردم پێ بکە! 🍕💍'],['هەرگیز!',0,'دڕندە! 😱 لە تۆمارەکان نووسرا 📝'],['نیوەی پێدەدەم، نیوەکەی تر هی منە 🍕',1,'بازرگانێکی چاک 🤝'],['دەیخۆم و تۆش تەماشا دەکەیت 😈',0,'']]},
+ {q:'ئەگەر ٥ خولەک نەمێنم، پێویستیت پێم دەبێت؟',a:[['دەگریم 😭',1,'ئاخ، هەم دراماتیک هەم دڵسۆز 🥹'],['ئارامییەکەم خۆش دەبێت 😂',0,'ڕەق! دادگا تۆماری کرد 👩‍⚖️']]},
+ {q:'ئێستا درۆم لەگەڵ دەکەیت؟ 👀',a:[['نەخێر!',1,'هممم… زۆر خێرا وەڵامت دایەوە 🕵️'],['ڕەنگە…',0,'دەمزانی! بەڵام بەردەوام دەبین 😅']]},
+ {q:'ئەگەر ٣٠ خولەک درەنگ هاتم بۆ دیدار، چی دەکەیت؟ ⏰',a:[['بە زەردەخەنەوە چاوەڕێت دەکەم 😊',1,'ئای چەند سەبوورە! 🥹'],['نانی خۆم دەخۆم و دەڕۆمەوە 🍔',0,''],['٢٠ جار تەلەفۆنت بۆ دەکەم 📞😂',1,'ئەمە خۆشەویستییە، یان گەمارۆدانە؟ 😂'],['دەڕۆم یەکێکی تر دەدۆزمەوە 🚶',0,'']]},
+ {q:'ئەگەر شەوان لە خەودا زۆر دەنگم هەبوو، چی دەکەیت؟ 😴🐷',a:[['وەک مۆسیقای ئارام گوێی لێ دەگرم 🎶',1,'شاعیرانەیە! 🎶'],['لە ژووری تر دەخەوم 🛏️',0,''],['گوێگرەکانم دەکڕم 🎧',1,'تەکنەلۆجیای خۆشەویستی 🎧'],['بالیف دەخەمە سەر دەمت 😈',0,'']]},
+ {q:'ئەگەر پیتزای ئاناناسم خۆشبوێت؟ 🍍🍕',a:[['هەتا ئاناناسیش لەگەڵت دەخۆم! 🍍',1,'قوربانیدانی ڕاستەقینە 🫡'],['ڕەتیدەکەمەوە، ئەمە تاوانە! 🚔',0,''],['جیابوونەوە 💔',0,''],['چاوم دادەخەم و دەیخۆم 😵',1,'بوێرییەکی زۆر 😂']]},
+ {q:'کێ جوانترە: من یان ئاوێنەکەت؟ 🪞',a:[['تۆ، بێگومان 😍',1,'ئاوێنەکە شەرمەزار بوو 🪞'],['ئاوێنەکەم 🪞',0,''],['هەردووکتان، بەڵام تۆ زیاتر 😌',1,'دیپلۆماسییەکی بەهێز 🎖️'],['پێویستم بە ئاوێنەیەکی گەورەترە 🤔',0,'']]},
+ {q:'ئەگەر من ببم بە پاشا، تۆ دەبیت بە؟ 👑',a:[['شاژن 👸',1,'بژی شاژنی دڵم! 👑'],['کۆیلەی خۆشەویستی 😂',1,'ئەمە زۆر ڕاستگۆیانەیە 😂'],['لە بەندیخانە دەتخەمە 🔒',0,''],['ئاشپەزی کۆشک 🍳',1,'زۆر بە سوود! 🍳']]},
+ {q:'دوا پرسیار: دەتەوێت هەتاهەتایە لەگەڵ من بیت؟ 💍',a:[['بەڵێ، ئیمزام کرد ✍️',1,'تەواو! لە ڕێگای گرێبەستەکەین 📜'],['تەنانەت دوای مردنیش 👻',1,'ئەمە ترسناکە، بەڵام خۆشەویستە 👻❤️'],['با بیر بکەمەوە… 🤔',0,''],['نەخێر 💔',0,'']]}
+];
+let qi=0,locked=false;
+function loadQ(){
+  const o=Q[qi];locked=false;
+  $('qcount').textContent='Question '+(qi+1)+' of '+Q.length;
+  $('bar').style.width=(qi/Q.length*100)+'%';
+  const t=$('qtext');t.textContent=o.q;t.style.animation='none';void t.offsetWidth;t.style.animation='';
+  const box=$('ans');box.innerHTML='';
+  [...o.a].sort(()=>Math.random()-.5).forEach(([label,good,msg])=>{
+    const b=document.createElement('button');b.textContent=label;if(!good)b.className='alt';
+    if(!good){let n=0;const run=()=>{if(n>=3||locked)return;n++;if(n===1)toast('وەڵامی هەڵە ڕادەکات! 🏃😂');b.style.transition='transform .25s';b.style.transform='translate('+rnd(-70,70)+'px,'+rnd(-80,80)+'px) rotate('+rnd(-12,12)+'deg)'};b.addEventListener('pointerenter',run);b.addEventListener('touchstart',run,{passive:true})}
+    b.onclick=e=>{if(locked)return;if(!good){troll(e);return}locked=true;toast(msg);
+      if(!good){$('qcard').classList.remove('shake');void $('qcard').offsetWidth;$('qcard').classList.add('shake')}
+      burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2,good?16:6);
+      $('bar').style.width=((qi+1)/Q.length*100)+'%';
+      setTimeout(()=>{qi++;qi<Q.length?loadQ():startLoading()},1500)};
+    box.appendChild(b)});
+}
+
+/* page 3 */
+function startLoading(){
+  show('p3');
+  const L=['شیکردنەوەی خۆشەویستییەکەت…','پشکنینی دڵسۆزییەکەت…','گەڕان بەدوای ئەوانی تر لە مۆبایلەکەت 📱…','ناردنی ڕاپۆرت بۆ دایکت 👩…','هەژمارکردنی ئەوەی چەندە خۆشتدەوێم…','پرۆسێس… ٩٩٪ ❤️'];
+  const pcts=[15,35,50,70,90,99];let i=0;
+  const next=()=>{
+    if(i>=L.length){setTimeout(reveal,1600);return}
+    const l=$('loadline');l.textContent=L[i];l.style.animation='none';void l.offsetWidth;l.style.animation='';
+    $('lbar').style.width=pcts[i]+'%';$('pct').textContent=pcts[i]+'%';
+    i++;setTimeout(next,i===6?2600:1500)};
+  next();
+}
+function reveal(){
+  $('loadcard').style.display='none';$('contract').style.display='block';
+  for(let k=0;k<6;k++)setTimeout(()=>burst(rnd(60,innerWidth-60),rnd(100,innerHeight/1.5),20),k*250);
+}
+let acc=0;
+$('accept').onclick=e=>{
+  acc++;burst(e.clientX,e.clientY,40);
+  const m=['ئیمزاکرا. مۆرکرا. خۆشەویستکرا. 💍','گرێبەستەکە یاسایییە* (*لە دڵمدا) 📜','دووبارە خوێندنەوەی سوودی نییە 😈','باشە، منیش خۆشتدەوێم. ❤️'];
+  $('final').textContent=m[Math.min(acc-1,m.length-1)];
+  toast(acc===1?'بەخێربێیت بۆ کلوبی هەتاهەتایی 🎉':'پێشتر ئیمزات کردووە. گەڕانەوە نییە! 😈');
+  for(let k=0;k<4;k++)setTimeout(()=>burst(rnd(60,innerWidth-60),rnd(100,innerHeight-100),18),k*200);
+};
+const decoyMsgs=['ئەمە نەخێری ساختەیە! 😂','گاڵتەجاڕی بوو، کلیکت لێ کرد! 🎭','ئەویش درۆیە، هاوڕێی نەخێرە 🤡','نەخێری ڕاستەقینە لە شوێنێکی ترە 🕵️'];
+function decoy(){const d=document.createElement('button');d.className='alt decoy';d.textContent=labels[Math.floor(rnd(0,labels.length))];
+ d.style.cssText='position:fixed;z-index:40;left:'+rnd(10,Math.max(20,innerWidth-130))+'px;top:'+rnd(80,Math.max(100,innerHeight-80))+'px;animation:pop .4s';
+ const pop=e=>{e.preventDefault();burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2,8);toast(decoyMsgs[Math.floor(rnd(0,decoyMsgs.length))]);d.remove()};
+ d.addEventListener('pointerdown',pop);d.addEventListener('click',pop);document.body.appendChild(d);setTimeout(()=>d.remove(),9000)}
+const bear=document.querySelector('.bear'),bearMsgs=['ئاخ! مەمدە 🧸','بەرزم دەکەیتەوە؟ 🥺','من بەڵێم گوت، تۆش بڵێ! 🧸❤️','دەمگرم ئەگەر نەخێر بڵێی 😭','پیتزاکەم بدەرێ 🍕'];
+bear.style.cursor='pointer';bear.addEventListener('click',e=>{toast(bearMsgs[Math.floor(rnd(0,bearMsgs.length))]);burst(e.clientX,e.clientY,10);bear.animate([{transform:'rotate(0)'},{transform:'rotate(360deg) scale(1.2)'},{transform:'rotate(0)'}],{duration:700})});
+const insults=['گووت خوارد خوێړی 💩','دەزانی غاردەی 😏','جړړړړړت 🤣','فلیمی ئەتوش 🎬😂'];let lastI=-1;
+function troll(e){let k;do{k=Math.floor(rnd(0,insults.length))}while(k===lastI);lastI=k;toast(insults[k],4000);const c=$('qcard');c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake');burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2,8)}
+const idle=['هێشتا لێرەیت؟ بەس بەڵێ بڵێ 😂','دوگمەی نەخێر ماندوو بوو، ئەتۆش! 😮‍💨','لە ٣ ڕۆژدا ناگەیت پێی 🐢','بەڵێ دوگمەی سەوزە… نا، سووورە! ❤️'];
+setInterval(()=>{if($('p1').classList.contains('on'))toast(idle[Math.floor(rnd(0,idle.length))])},14000);
+$('decline').onclick=e=>{toast('ڕەتکردنەوە شکا 💥 هەڵە ٤٠٤: ئازادی نەدۆزرایەوە');document.body.classList.add('shake');setTimeout(()=>document.body.classList.remove('shake'),500);burst(e.clientX,e.clientY,30);$('accept').style.transform='scale(1.25)';$('final').textContent='بە خۆکاری قبوڵکرا 😈'};
+</script>
+</body>
+</html>
